@@ -1,0 +1,504 @@
+body{
+    font-family: "Franklin Gothic Medium", Arial, sans-serif;
+}
+
+nav{
+    width: 100%;
+    height: 60px;
+    background: #344051;
+}
+
+.logo{
+    color: #fff;
+    font-size: 28px;
+    line-height: 60px;
+    padding-left: 388px;
+    float: left;
+}
+
+.menu{
+    float: left;
+    padding-left: 432px;
+}
+.menu li{
+    float: left;
+    line-height: 60px;
+    color: #fff;
+    margin-right: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.main{
+    width: 100%;
+    height: calc(100% - 60px);
+    background: url(../img/guy.png) 90% 100%/auto 85% no-repeat, url(../img/mainbackground.png) center/cover no-repeat;
+}
+
+.title_container{
+    float: left;
+    margin: 432px 0px 0px 404px;
+    color: #2c384a;
+    text-align: center;
+
+}
+
+.title_container h1{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.title_container h4{
+    margin-top: 40px;
+    font-size: 22px;
+    color: #79818d;
+    /*Как правильно оформить оба абзаца? Использовал перенос строки в HTML, но так я не могу точно задавать расстояние между абзацами.
+    Можно ли установить расстояние между абзацами, при этом не присваивая каждому класс?*/
+}
+
+.title_container input{
+    height: 40px;
+    text-align: center;
+    border: 2px solid #6d7682;
+    background: none;
+    border-radius: 5px;
+    color: #6d7682;
+    font-size: 13px;
+    padding: 0px 16px;
+    margin: 58px 14px 0px 14px;
+}
+
+/*Обо мне*/
+.about_me_container{
+    width: 100%;
+    height: 715px;
+}
+
+.about_me_container h2{
+    padding-top: 109px;
+    color: #263244;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+#line{
+    width: 72px;
+    height: 4px;
+    background: #d17700;
+    margin: 31px auto auto auto;
+}
+
+.guyround{
+    display: block;
+    margin: 59px auto auto auto;
+    text-align: center;
+    /*Вставил картинку в HTML. Оптимально ли это?*/
+}
+
+.about_me_container p{
+    margin: 22px auto 0px auto;
+    padding-bottom: 34px;
+    width: 40%;
+    color: #3f495a;
+}
+
+.about_me_container a{
+    display:block;
+    text-align: center;
+    width: 158px;
+    margin: auto;
+    padding: 9px 11px;
+    color: #6f707e;
+    border: 2px solid #6f707e;
+    border-radius: 5px;
+}
+
+/*Что я умею*/
+.wican_container{
+    width: 100%;
+    height: 523px;
+    background: url(../img/wicanbg.png) center/cover  no-repeat;
+}
+
+.wican_container h2{
+    padding-top: 107px;
+    color: #263244;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+.wican{
+    width: 1100px;
+    margin: 106px 25% auto 25%;
+    text-align: center;
+}
+
+.wican img{
+    margin-bottom: 35px;
+}
+
+.wican li{
+    float: left;
+    width: 14.3229166%;
+    color: #d17700;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 16px;
+}
+
+.wican p{
+    color: #263244;
+    margin-top: 15px;
+}
+
+/*Кейсы*/
+.cases{
+    height: 1150px;
+    width: 100%;
+}
+
+.cases h2{
+    padding-top: 110px;
+    color: #263244;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+.cases p{
+    text-align: center;
+    color: #263244;
+    margin-top: 36px;
+}
+
+.cases img{
+    width: 60.885416%;
+    margin: 43px 19.55729%;
+}
+
+.cases ul{
+    width: 80.44271%;
+    margin: auto 19.55729%;
+    
+}
+
+.li_1{
+    float: left;
+    width: 14.947916666%;
+    
+}
+
+.li_1 h4{
+    color: #263244;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.li_1 div{
+    color: #263244;
+    line-height: 2;
+}
+
+.li_1 form{
+    height: 44px;
+    width: 201px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Пытался выровнять текст по высоте, нашел только такое решение*/
+    background: #63b5ae;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.li_2{
+    float: left;
+    width: 46.04166666%;
+}
+
+.li_2 h4{
+    color: #263244;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.li_2 div{
+    color: #263244;
+}
+
+/*Расчет стоимости*/
+.price{
+    height: 854px;
+    width: 100%;
+}
+
+.price h2{
+    padding-top: 107px;
+    color: #263244;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+.price h3{
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #263244;
+    font-weight: 500;
+}
+
+.params{
+    width: 891px;
+    margin: 58px 26.796875% auto 26.796875%;
+
+}
+
+.params select{
+    color: #737373;
+    background-color: #eeeeee;
+    height: 57px;
+    width: 100%;
+    padding-left: 24px;
+    margin-top: 22px;
+    margin-bottom: 49px;
+    font-size: 15px;
+}
+
+#line2{
+    width: 891px;
+    height: 2px;
+    margin: -13px 26.796875% auto 26.796875%;
+    background-color: #d1d1d1;
+
+}
+
+/*
+.total{
+    width: 891px;
+    margin: 0 26.796875% auto 26.796875%;
+    text-align: justify;
+}
+
+.total li{
+    width: 445.5px;
+    float: left;
+    text-align: justify;
+    
+
+}
+.right{
+    align: right;
+}
+*/
+
+/*Не удалось развести текст по краям. Как это можно сделать?*/
+
+/*Немного статистики*/
+.statistics_container{
+    width: 100%;
+    height: 499px;
+    background: url(../img/statisticbg.png) center/cover  no-repeat;
+}
+
+.statistics_container h2{
+    padding-top: 107px;
+    color: #263244;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+.statistics{
+    width: 1100px;
+    margin: 106px 25% auto 25%;
+    text-align: center;
+}
+
+.statistics img{
+    margin-bottom: 35px;
+}
+
+.statistics li{
+    float: left;
+    width: 14.3229166%;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+    color: #323e4f;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.statistics p{
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 500
+}
+
+/*Отзывы*/
+.reviews{
+    height: 592px;
+    width: 100%;
+}
+
+.reviews h2{
+    padding-top: 107px;
+    color: #263244;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+.reviews img{
+    display: block;
+    margin: 58px auto 35px auto;
+}
+
+.reviews div{
+    width: 35.9375%;
+    margin: auto 32.03125%;
+    text-align: center;
+}
+
+.reviews p{
+    margin-top: 37px;
+    margin-bottom: 48px;
+}
+
+.reviews b{
+    font-weight: bold;
+}
+
+#dots{
+    width: 72px;
+    margin: auto;
+    
+}
+
+#dots li{
+    float: left;
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    background: #cfd2d7;
+    border-radius: 5px;
+    margin: auto 7px;
+}
+
+#dots .selected{
+    background: #c96500;
+}
+
+/*Мои контакты*/
+.mycontact{
+    width: 100%;
+    height: 808px;
+    background: url(../img/Bg.png) no-repeat;
+}
+
+.mycontact h2{
+    padding-top: 109px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 37px;
+    text-transform: uppercase;
+}
+
+.mycontact p{
+    color: #fff;
+    text-align: center;
+    margin-top: 32px;
+    font-size: 17px;
+}
+
+.contacts{
+    width: 733px;
+    text-align: center;
+    margin: auto 30.911458333%;
+}
+
+.contacts li{
+    float: left;
+    margin: 47px 40px auto 40px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.contacts img{
+    margin-bottom: 15px;
+}
+
+.mycontact h3{
+    margin: 154px auto 45px auto;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+.textar{
+    width: 793px;
+    text-align: center;
+    margin: auto 30.911458333%;
+    color: #5d5d5e;
+    font-size: 17px;
+    
+}
+
+.textar li{
+    float: left;
+    margin: auto 15px 14px 15px;
+}
+.textar li textarea{
+    width: 352px;
+    height: 34px;
+    padding: 6px 7px;
+    color: #5d5d5e;
+    font-size: 17px;
+    opacity: 0.8;
+}
+
+.Text li textarea{
+    width: 732px;
+    height: 94px;
+}
+
+.mycontact form{
+    width: 125px;
+    height: 46px;
+    margin: 208px auto auto auto;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.mycontact form input{
+    background: none;
+    font-size: 17px;
+    color: #fff;
+    padding: 10.5px;
+}
+
+/*Карта*/
+.geo{
+    width: 100%;
+}
+
+footer{
+    height: 96px;
+    text-align: center;
+    background: #354051;
+    color: #fff;
+    padding-top: 41px;
+}
