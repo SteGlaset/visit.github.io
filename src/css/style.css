@@ -1,3 +1,49 @@
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #d17700;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  
+/* Добавить анимацию к "Содержимое страницы" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from { opacity:0 } 
+    to { opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ opacity:0 } 
+    to{ opacity:1 }
+}
+
 body{
     font-family: "Franklin Gothic Medium", Arial, sans-serif;
 }
@@ -6,6 +52,7 @@ nav{
     width: 100%;
     height: 60px;
     background: #344051;
+    position: fixed;
 }
 
 .logo{
@@ -14,11 +61,20 @@ nav{
     line-height: 60px;
     padding-left: 388px;
     float: left;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
+}
+
+main{
+    width: 100%;
+    height: 100%;
 }
 
 .menu{
     float: left;
     padding-left: 432px;
+    z-index: 2;
 }
 .menu li{
     float: left;
@@ -27,11 +83,57 @@ nav{
     margin-right: 40px;
     font-size: 16px;
     text-transform: uppercase;
+    -webkit-animation: topshift 0.4s ease forwards; 
+    -o-animation: topshift 0.4s ease forwards;
+    animation: topshift 0.4s ease forwards;
+    opacity: 0;
+    z-index: 2;
+}
+
+.menu li a{
+    transition: all 0.1s;
+    color: white;
+    transform: scale(1);
+    display: inline-block;
+}
+
+.menu li a:visited{
+    color: white;
+}
+
+.menu li a:hover{
+    color: #e68910;
+    text-shadow: 0 0 3px #d17700;
+    
+}
+
+.menu li a:active{
+    transform: scale(1.1);
+}
+
+.menu li:nth-child(2){
+    animation-delay: 0.8s;
+}
+
+.menu li:nth-child(3){
+    animation-delay: 1.2s;
+}
+
+.menu li:nth-child(4){
+    animation-delay: 1.6s;
+}
+
+.menu li:nth-child(5){
+    animation-delay: 2.0s;
+}
+
+.menu li:nth-child(6){
+    animation-delay: 2.4s;
 }
 
 .main{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 1080px;
     background: url(../img/guy.png) 90% 100%/auto 85% no-repeat, url(../img/mainbackground.png) center/cover no-repeat;
 }
 
@@ -40,6 +142,13 @@ nav{
     margin: 432px 0px 0px 404px;
     color: #2c384a;
     text-align: center;
+    -webkit-animation: titlemove 1s ease forwards; 
+    -o-animation: titlemove 1s ease forwards;
+    animation: titlemove 1s ease forwards;
+    -webkit-animation-delay: 2.4s;
+    -o-animation-delay: 2.4s;
+    animation-delay: 2.4s;
+    opacity: 0;
 
 }
 
@@ -52,8 +161,6 @@ nav{
     margin-top: 40px;
     font-size: 22px;
     color: #79818d;
-    /*Как правильно оформить оба абзаца? Использовал перенос строки в HTML, но так я не могу точно задавать расстояние между абзацами.
-    Можно ли установить расстояние между абзацами, при этом не присваивая каждому класс?*/
 }
 
 .title_container input{
@@ -66,12 +173,63 @@ nav{
     font-size: 13px;
     padding: 0px 16px;
     margin: 58px 14px 0px 14px;
+    transition: all 0.2s;
+    transform: scale(1);
 }
 
-/*Обо мне*/
+.title_container input:hover{
+    background: #344051;
+    color: white;
+}
+
+.title_container input:active{
+    transform: scale(1.1);
+}
+
+@keyframes comming{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes topshift{
+    from{
+        opacity: 0;
+        margin-top: -80px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+@keyframes titlemove{
+    from{
+        opacity: 0;
+        margin-top: -500px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 404px;
+    }
+}
+
 .about_me_container{
     width: 100%;
     height: 715px;
+    
+}
+
+@keyframes comming{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .about_me_container h2{
@@ -80,6 +238,9 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 #line{
@@ -87,13 +248,19 @@ nav{
     height: 4px;
     background: #d17700;
     margin: 31px auto auto auto;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .guyround{
     display: block;
     margin: 59px auto auto auto;
     text-align: center;
-    /*Вставил картинку в HTML. Оптимально ли это?*/
+    -webkit-animation: comming ease 4s; 
+    -o-animation: comming ease 4s;
+    animation: comming ease 4s;
+
 }
 
 .about_me_container p{
@@ -101,6 +268,20 @@ nav{
     padding-bottom: 34px;
     width: 40%;
     color: #3f495a;
+    -webkit-animation: a_pmove ease 2s; 
+    -o-animation: a_pmove ease 2s;
+    animation: a_pmove ease 2s;
+}
+
+@keyframes a_pmove {
+    from{
+        margin-left: -500px;
+        opacity: 0;
+    }
+    to{
+        margin-left: 545px;
+        opacity: 1;
+    }
 }
 
 .about_me_container a{
@@ -112,13 +293,25 @@ nav{
     color: #6f707e;
     border: 2px solid #6f707e;
     border-radius: 5px;
+    -webkit-animation: comming 1s forwards 2s; 
+    -o-animation: comming 1s forwards 2s;
+    animation: comming 1s forwards 2s;
+
+    opacity: 0;
 }
 
-/*Что я умею*/
+.about_me_container a:hover{
+    transform: scale(1.06, 1.06);
+    transition: all 0.1s;
+}
+
+.about_me_container a:active{
+    transform: scale(1.1);
+}
+
 .wican_container{
     width: 100%;
     height: 523px;
-    background: url(../img/wicanbg.png) center/cover  no-repeat;
 }
 
 .wican_container h2{
@@ -127,12 +320,30 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .wican{
     width: 1100px;
     margin: 106px 25% auto 25%;
     text-align: center;
+    -webkit-animation: wicanmove 2s forwards 0.7s; 
+    -o-animation: wicanmove 2s forwards 0.7s;
+    animation: wicanmove 2s forwards 0.7s;
+    opacity: 0;
+}
+
+@keyframes wicanmove {
+    from{
+        margin-top: 0px;
+        opacity: 0;
+    }
+    to{
+        margin-top: 106px;
+        opacity: 1;
+    }
 }
 
 .wican img{
@@ -153,7 +364,6 @@ nav{
     margin-top: 15px;
 }
 
-/*Кейсы*/
 .cases{
     height: 1150px;
     width: 100%;
@@ -165,19 +375,38 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .cases p{
     text-align: center;
     color: #263244;
     margin-top: 36px;
+    -webkit-animation: comming ease 4s; 
+    -o-animation: comming ease 4s;
+    animation: comming ease 4s;
 }
 
 .cases img{
     width: 60.885416%;
     margin: 43px 19.55729%;
+    -webkit-animation: scale ease 3s; 
+    -o-animation: scale ease 3s;
+    animation: scale ease 3s;
 }
 
+@keyframes scale{
+    from{
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
 .cases ul{
     width: 80.44271%;
     margin: auto 19.55729%;
@@ -187,7 +416,23 @@ nav{
 .li_1{
     float: left;
     width: 14.947916666%;
+    -webkit-animation: comming 1s forwards 2s; 
+    -o-animation: comming 1s forwards 2s;
+    animation: comming 1s forwards 2s;
+    opacity: 0;
+
     
+}
+
+@keyframes li_2move {
+    from{
+        margin-left: 500px;
+        opacity: 0;
+    }
+    to{
+        margin-left: 0px;
+        opacity: 1;
+    }
 }
 
 .li_1 h4{
@@ -202,13 +447,12 @@ nav{
     line-height: 2;
 }
 
-.li_1 form{
+.li_1 a{
     height: 44px;
     width: 201px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*Пытался выровнять текст по высоте, нашел только такое решение*/
     background: #63b5ae;
     border-radius: 5px;
     color: #fff;
@@ -217,9 +461,26 @@ nav{
     font-weight: 600;
 }
 
+.li_1 a:hover {
+    background: #ff9102;
+    color: #263244;
+    box-shadow: 0 0 16px #ff960d;
+    transition: all 0.1s;
+}
+
+.li_1 a:active {
+    background: #ffaf02;
+    box-shadow: 0 0 30px #ffaf02;
+    transition: all 0.1s;
+}
+
 .li_2{
     float: left;
     width: 46.04166666%;
+    -webkit-animation: li_2move 1s forwards 2s; 
+    -o-animation: li_2move 1s forwards 2s;
+    animation: li_2move 1s forwards 2s;
+    opacity: 0;
 }
 
 .li_2 h4{
@@ -234,7 +495,6 @@ nav{
     color: #263244;
 }
 
-/*Расчет стоимости*/
 .price{
     height: 854px;
     width: 100%;
@@ -246,6 +506,9 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .price h3{
@@ -259,6 +522,39 @@ nav{
     width: 891px;
     margin: 58px 26.796875% auto 26.796875%;
 
+}
+
+.params li:nth-child(1){
+    -webkit-animation: priceLiMove 1s forwards 0.8s; 
+    -o-animation: priceLiMove 1s forwards 0.8s;
+    animation: priceLiMove 1s forwards 0.8s;
+    opacity: 0;
+}
+
+.params li:nth-child(2){
+    -webkit-animation: priceLiMove 1s forwards 1s; 
+    -o-animation: priceLiMove 1s forwards 1s;
+    animation: priceLiMove 1s forwards 1s;
+    opacity: 0;
+}
+
+.params li:nth-child(3){
+    -webkit-animation: priceLiMove 1s forwards 1.2s; 
+    -o-animation: priceLiMove 1s forwards 1.2s;
+    animation: priceLiMove 1s forwards 1.2s;
+    opacity: 0;
+}
+
+@keyframes priceLiMove {
+    from{
+        margin-left: -26.796875%;
+        opacity: 0;
+    }
+    to{
+        margin-left: 0%;
+        opacity: 1;
+    }
+    
 }
 
 .params select{
@@ -277,35 +573,44 @@ nav{
     height: 2px;
     margin: -13px 26.796875% auto 26.796875%;
     background-color: #d1d1d1;
+    -webkit-animation: comming 1s forwards 2s; 
+    -o-animation: comming 1s forwards 2s;
+    animation: comming 1s forwards 2s;
+    opacity: 0;
 
 }
 
-/*
 .total{
+    margin-top: 20px;
+    color: #263244;
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-animation: comming 1s forwards 2s; 
+    -o-animation: comming 1s forwards 2s;
+    animation: comming 1s forwards 2s;
+    opacity: 0;
+
+}
+
+.total ul{
     width: 891px;
-    margin: 0 26.796875% auto 26.796875%;
+    margin: 0px 26.796875% auto 26.796875%;
     text-align: justify;
 }
 
-.total li{
-    width: 445.5px;
+.left{
     float: left;
-    text-align: justify;
+    text-align: left;
     
-
 }
 .right{
-    align: right;
+    text-align: right;
+    font-weight: 700;
 }
-*/
 
-/*Не удалось развести текст по краям. Как это можно сделать?*/
-
-/*Немного статистики*/
 .statistics_container{
     width: 100%;
     height: 499px;
-    background: url(../img/statisticbg.png) center/cover  no-repeat;
 }
 
 .statistics_container h2{
@@ -314,12 +619,19 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .statistics{
     width: 1100px;
     margin: 106px 25% auto 25%;
     text-align: center;
+    -webkit-animation: wicanmove 2s forwards 0.7s; 
+    -o-animation: wicanmove 2s forwards 0.7s;
+    animation: wicanmove 2s forwards 0.7s;
+    opacity: 0;
 }
 
 .statistics img{
@@ -343,10 +655,10 @@ nav{
     font-weight: 500
 }
 
-/*Отзывы*/
 .reviews{
     height: 592px;
     width: 100%;
+    background: #fff;
 }
 
 .reviews h2{
@@ -355,17 +667,39 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .reviews img{
     display: block;
     margin: 58px auto 35px auto;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
-.reviews div{
+.reviews div:not(#line){
     width: 35.9375%;
     margin: auto 32.03125%;
     text-align: center;
+    -webkit-animation: revDivMove 1s forwards 1s; 
+    -o-animation: revDivMove 1s forwards 1s;
+    animation: revDivMove 1s forwards 1s;
+    opacity: 0;
+}
+
+@keyframes revDivMove {
+    from{
+        opacity: 0;
+        margin-left: 0%;
+    }
+    to{
+        opacity: 1;
+        margin-left: 32.03125%;
+    }
+    
 }
 
 .reviews p{
@@ -380,7 +714,17 @@ nav{
 #dots{
     width: 72px;
     margin: auto;
-    
+}
+
+@keyframes dots {
+    from{
+        margin-left: 0px;
+        opacity: 0;
+    }
+    to{
+        margin-left: 7px;
+        opacity: 1;
+    }
 }
 
 #dots li{
@@ -391,17 +735,20 @@ nav{
     background: #cfd2d7;
     border-radius: 5px;
     margin: auto 7px;
+    -webkit-animation: dots 1s forwards 2s; 
+    -o-animation: dots 1s forwards 2s;
+    animation: dots 1s forwards 2s;
+    opacity: 0;
 }
 
 #dots .selected{
     background: #c96500;
 }
 
-/*Мои контакты*/
 .mycontact{
     width: 100%;
     height: 808px;
-    background: url(../img/Bg.png) no-repeat;
+    /*background: url(../img/Bg.png) no-repeat;*/
 }
 
 .mycontact h2{
@@ -410,6 +757,9 @@ nav{
     text-align: center;
     font-size: 37px;
     text-transform: uppercase;
+    -webkit-animation: comming ease 2s; 
+    -o-animation: comming ease 2s;
+    animation: comming ease 2s;
 }
 
 .mycontact p{
@@ -417,6 +767,10 @@ nav{
     text-align: center;
     margin-top: 32px;
     font-size: 17px;
+    -webkit-animation: comming 2s forwards 0.3s; 
+    -o-animation: comming 2s forwards 0.3s;
+    animation: comming 2s forwards 0.3s;
+    opacity: 0;
 }
 
 .contacts{
@@ -431,7 +785,21 @@ nav{
     font-size: 17px;
     font-weight: 600;
     color: #fff;
+    -webkit-animation: contactmove 2s forwards 0.7s; 
+    -o-animation: contactmove 2s forwards 0.7s;
+    animation: contactmove 2s forwards 0.7s;
+    opacity: 0;
 }
+    @keyframes contactmove{
+        from{
+            margin-top: 10px;
+            opacity: 0;
+        }
+        to{
+            margin-top: 47px;
+            opacity: 1;
+        }
+    }
 
 .contacts img{
     margin-bottom: 15px;
@@ -444,6 +812,10 @@ nav{
     color: #fff;
     font-weight: 500;
     text-align: center;
+    -webkit-animation: comming 2s forwards 0.9s; 
+    -o-animation: comming 2s forwards 0.9s;
+    animation: comming 2s forwards 0.9s;
+    opacity: 0;
 }
 
 .textar{
@@ -452,6 +824,21 @@ nav{
     margin: auto 30.911458333%;
     color: #5d5d5e;
     font-size: 17px;
+    -webkit-animation: textarmove 2s forwards 0.9s; 
+    -o-animation: textarmove 2s forwards 0.9s;
+    animation: textarmove 2s forwards 0.9s;
+    opacity: 0;
+}
+
+@keyframes textarmove{
+    from{
+        opacity: 0;
+        margin-left: -30%;
+    }
+    to{
+        opacity: 1;
+        margin-left: 30.911458333%;
+    }
     
 }
 
@@ -480,7 +867,22 @@ nav{
     border: 2px solid #fff;
     border-radius: 5px;
     text-align: center;
+    -webkit-animation: mcmove 2s forwards 1.2s; 
+    -o-animation: mcmove 2s forwards 1.2s;
+    animation: mcmove 2s forwards 1.2s;
+    opacity: 0;
+}
 
+@keyframes mcmove{
+    from{
+        opacity: 0;
+        margin-left: 0%;
+    }
+    to{
+        opacity: 1;
+        margin-left: 46.6%;
+    }
+    
 }
 
 .mycontact form input{
@@ -490,7 +892,50 @@ nav{
     padding: 10.5px;
 }
 
-/*Карта*/
+
+.mycontact form:hover{
+    box-shadow: 0 0 10px #d17700;
+    border-color: #d17700;
+    transition: all 0.1s;
+}
+
+.mycontact form:hover input{
+    color: #d17700;
+    transition: all 0.1s;
+}
+
+.mycontact form:active{
+    box-shadow: 0 0 15px #ff9100;
+    border-color: #ff9100;
+    transition: all 0.1s;
+}
+
+.mycontact form:active input{
+    color: #ff9100;
+    transition: all 0.1s;
+}
+
+.socsites {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    padding-left: 52px;
+    -webkit-animation: comming 2s forwards 1.9s; 
+    -o-animation: comming 2s forwards 1.9s;
+    animation: comming 2s forwards 1.9s;
+    opacity: 0;
+}
+
+.socsites li{
+    float: left;
+    margin-right: 52px;
+}
+
+.socsites li:hover{
+    transform: scale(1.1, 1.1);
+    transition: all 0.1s;
+}
+
 .geo{
     width: 100%;
 }
