@@ -25,8 +25,21 @@ $(window).scroll(() => {
     });
 });
 
+/*Parallax*/
+var myVar;
+            function myFunction() {
+                myVar = setTimeout(showPage, 1000);
+            }
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myDiv").style.display = "block";
+            }
+
 /*Magnific popup*/
-$('.image-link').magnificPopup({type:'image'});
+$('.image-link').magnificPopup({
+    type:'image',
+    fixedContentPos: false
+});
 
 /*Всплывающее окно о скидке*/
 var toastLiveExample = document.getElementById('liveToast');
@@ -46,7 +59,7 @@ elements.each((i, el) => {
     observer.observe(el);
 });
 
-//Смена на качественные изображения
+/*Смена на качественные изображения*/
 let imgElements = $('img');
 imgElements.each((i, el) => {
     observer.observe(el);
@@ -57,7 +70,6 @@ function onEntry(entry) {
     entry.forEach(change => {
         if (change.isIntersecting) {
             change.target.classList.add('show-animation');
-            console.log(change.target)
             change.target.src = change.target.dataset.src;
 
             /*Бегающие цифры, статистика*/
@@ -68,7 +80,6 @@ function onEntry(entry) {
         };
     });
 };
-
 
 /*Калькулятор цены*/
 let priceOptions = {
@@ -130,3 +141,12 @@ function reselectDot(dot) {
     });
     $('.revBut_' + parseInt(dot.match(/\d+/))).addClass('selected');
 }
+
+/*Валидация*/
+$("#phone").mask("+7(999) 999-9999");
+
+/*WOW*/
+new WOW().init();
+
+
+
