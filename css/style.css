@@ -273,6 +273,7 @@
     text-decoration: none;
     text-transform: none;
     font-weight: 600;
+    margin-bottom: 41px;
 }
 .li_1 a:hover {
     background: #ff9102;
@@ -851,6 +852,10 @@
     transition: all 0.1s;
 }
 @media (max-width: 590px) {
+    .textar li {
+        width: 90%;
+        margin: 0 auto 14px auto;
+    }
     .textar li:nth-child(-n + 2) {
         flex-basis: 100%;
     }
@@ -870,6 +875,7 @@
 .socsites li {
     float: left;
     margin-right: 52px;
+    margin-bottom: 25px;
     opacity: 0.7;
     cursor: pointer;
 }
